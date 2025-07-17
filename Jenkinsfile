@@ -27,13 +27,14 @@ pipeline {
         script {
           echo 'Setting up Virtual Environment and Installing Dependencies...'
           sh '''
-            python3 -m venv ${VENV_DIR}
-            source ${VENV_DIR}/bin/activate
-            pip install --upgrade pip
-            if [ -f requirements.txt ]; then
-              pip install -r requirements.txt
-            fi
+          python3 -m venv ${VENV_DIR}
+          . ${VENV_DIR}/bin/activate
+          pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+          fi
           '''
+
         }
       }
     }
