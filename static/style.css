@@ -1,0 +1,155 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #d4f1f4, #ffffff);
+  color: #333;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  max-width: 600px;
+  margin: auto;
+  background-color: #ffffffee;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 123, 167, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.container:hover {
+  box-shadow: 0 0 40px rgba(0, 123, 167, 0.2);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #007ba7;
+  font-size: 1.8rem;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.form-group:focus-within {
+  transform: scale(1.02);
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #004e64;
+}
+
+input,
+select {
+  padding: 10px 14px;
+  border: 1px solid #b2d8d8;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fefe;
+}
+
+input:focus,
+select:focus {
+  border-color: #007ba7;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 123, 167, 0.2);
+}
+
+/* Button */
+button[type="submit"] {
+  background-color: #007ba7;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #005f7f;
+  transform: translateY(-2px);
+}
+
+/* Result Section */
+.result {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #e0f7fa;
+  border: 1px solid #b2ebf2;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.result h3 {
+  font-size: 1.4rem;
+  color: #004d40;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  button[type="submit"] {
+    font-size: 0.95rem;
+  }
+
+  input,
+  select {
+    font-size: 0.95rem;
+  }
+}
